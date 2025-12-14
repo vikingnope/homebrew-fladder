@@ -2,17 +2,6 @@
 
 Unofficial Homebrew tap for [Fladder](https://github.com/DonutWare/Fladder) - A Simple Jellyfin frontend built with Flutter.
 
-## What is Fladder?
-
-Fladder is a modern, cross-platform Jellyfin client that provides:
-- 🎬 Media streaming with Direct, Transcode, and Offline playback
-- 📱 Support for macOS, Windows, Linux, iOS, Android, and Web
-- ⚡ Trickplay support with timeline scrubbing
-- 🎨 Dark/Light mode with multiple color themes
-- 📚 Simple comic book format reading (.cbz, .cbr)
-- 💾 Download and sync content for offline viewing
-- ⌨️ Keyboard shortcuts for desktop platforms
-
 ## Why This Tap?
 
 Fladder's macOS builds are not code-signed with an Apple Developer certificate, which means they cannot be included in the official Homebrew Cask repository. This tap provides an easy way to install and manage Fladder on macOS using Homebrew.
