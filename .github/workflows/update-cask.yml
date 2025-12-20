@@ -1,6 +1,8 @@
 name: Update Fladder Cask
 
 on:
+  schedule:
+    - cron: '0 0 * * *'
   workflow_dispatch:
 
 jobs:
@@ -9,6 +11,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6.0.1
+        with:
+          token: ${{ secrets.GH_PAT }}
 
       - name: Get latest Fladder release
         id: latest_release
@@ -60,15 +64,11 @@ jobs:
           sed -i "s/- \*\*Current Version:\*\* .*/- **Current Version:** $VERSION/" README.md
           sed -i "s/- \*\*Release Date:\*\* .*/- **Release Date:** $RELEASE_DATE/" README.md
 
-      - name: Create Pull Request
+      - name: Commit and push changes
         if: steps.latest_release.outputs.version != steps.current_version.outputs.version
-        uses: peter-evans/create-pull-request@v8.0.0
-        with:
-          commit-message: "Update Fladder to ${{ steps.latest_release.outputs.version }}"
-          title: "Update Fladder to ${{ steps.latest_release.outputs.version }}"
-          body: |
-            Automated update to Fladder ${{ steps.latest_release.outputs.version }}
-            
-            Release notes: https://github.com/DonutWare/Fladder/releases/tag/${{ steps.latest_release.outputs.tag }}
-          branch: chore/update-fladder-${{ steps.latest_release.outputs.version }}
-          delete-branch: true
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add Casks/fladder.rb README.md
+          git commit -m "Update Fladder to ${{ steps.latest_release.outputs.version }}"
+          git push
