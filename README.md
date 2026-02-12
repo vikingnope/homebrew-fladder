@@ -11,7 +11,7 @@ Fladder's macOS builds are not code-signed with an Apple Developer certificate, 
 First, add this tap to Homebrew:
 
 ```bash
-brew tap vikingnope/fladder
+brew tap schembriaiden/fladder
 ```
 
 Then install Fladder:
@@ -23,7 +23,7 @@ brew install --cask fladder
 Or do both in one command:
 
 ```bash
-brew install --cask vikingnope/fladder/fladder
+brew install --cask schembriaiden/fladder/fladder
 ```
 
 ## First Launch
@@ -68,7 +68,7 @@ brew uninstall --zap --cask fladder
 To remove this tap:
 
 ```bash
-brew untap vikingnope/fladder
+brew untap schembriaiden/fladder
 ```
 
 ## What Gets Removed with `--zap`?
@@ -98,12 +98,12 @@ brew upgrade fladder
 
 - [Fladder Official Repository](https://github.com/DonutWare/Fladder)
 - [Fladder Releases](https://github.com/DonutWare/Fladder/releases)
-- [Report Issues](https://github.com/vikingnope/homebrew-fladder/issues)
+- [Report Issues](https://github.com/schembriaiden/homebrew-fladder/issues)
 - [Jellyfin](https://jellyfin.org/)
 
 ## Contributing
 
-Found a bug or have a suggestion? Please [open an issue](https://github.com/vikingnope/homebrew-fladder/issues/new).
+Found a bug or have a suggestion? Please [open an issue](https://github.com/schembriaiden/homebrew-fladder/issues/new).
 
 ## License
 
